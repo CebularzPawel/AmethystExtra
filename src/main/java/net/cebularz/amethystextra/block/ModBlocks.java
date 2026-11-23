@@ -12,75 +12,75 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.registries.DeferredRegister;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.neoforged.neoforge.registries.DeferredHolder;
 
 import java.util.function.Supplier;
 
 public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS=
-            DeferredRegister.create(ForgeRegistries.BLOCKS, AmethystExtra.MOD_ID);
+            DeferredRegister.create(BuiltInRegistries.BLOCK, AmethystExtra.MOD_ID);
 
 
-    public static final RegistryObject<Block> AMETHYST_BRICKS = registerBlock("amethyst_bricks",
+    public static final DeferredHolder<Block, Block> AMETHYST_BRICKS = registerBlock("amethyst_bricks",
             ()-> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK)));
 
-    public static final RegistryObject<Block> AMETHYST_BRICKS_STAIRS = registerBlock("amethyst_bricks_stairs",
+    public static final DeferredHolder<Block, Block> AMETHYST_BRICKS_STAIRS = registerBlock("amethyst_bricks_stairs",
             ()-> new StairBlock(ModBlocks.AMETHYST_BRICKS.get().defaultBlockState(),BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK)));
-    public static final RegistryObject<Block> AMETHYST_BRICKS_SLAB = registerBlock("amethyst_bricks_slab",
+    public static final DeferredHolder<Block, Block> AMETHYST_BRICKS_SLAB = registerBlock("amethyst_bricks_slab",
             ()-> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK)));
-    public static final RegistryObject<Block> AMETHYST_BRICKS_WALL = registerBlock("amethyst_bricks_wall",
+    public static final DeferredHolder<Block, Block> AMETHYST_BRICKS_WALL = registerBlock("amethyst_bricks_wall",
             ()-> new WallBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK)));
 
 
-    public static final RegistryObject<Block>  POLISHED_AMETHYST = registerBlock("polished_amethyst",
+    public static final DeferredHolder<Block, Block>  POLISHED_AMETHYST = registerBlock("polished_amethyst",
             ()-> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK)));
-    public static final RegistryObject<Block>  AMETHYST_SPIRAL = registerBlock("amethyst_spiral",
+    public static final DeferredHolder<Block, Block>  AMETHYST_SPIRAL = registerBlock("amethyst_spiral",
             ()-> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK)));
-    public static final RegistryObject<Block> POLISHED_AMETHYST_STAIRS = registerBlock("polished_amethyst_stairs",
+    public static final DeferredHolder<Block, Block> POLISHED_AMETHYST_STAIRS = registerBlock("polished_amethyst_stairs",
             ()-> new StairBlock(ModBlocks.POLISHED_AMETHYST.get().defaultBlockState(),BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK)));
-    public static final RegistryObject<Block> POLISHED_AMETHYST_SLAB = registerBlock("polished_amethyst_slab",
+    public static final DeferredHolder<Block, Block> POLISHED_AMETHYST_SLAB = registerBlock("polished_amethyst_slab",
             ()-> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK)));
-    public static final RegistryObject<Block> POLISHED_AMETHYST_WALL = registerBlock("polished_amethyst_wall",
+    public static final DeferredHolder<Block, Block> POLISHED_AMETHYST_WALL = registerBlock("polished_amethyst_wall",
             ()-> new WallBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK)));
 
 
 
-    public static final RegistryObject<Block> CHISELED_AMETHYST_BRICKS = registerBlock("chiseled_amethyst_bricks",
+    public static final DeferredHolder<Block, Block> CHISELED_AMETHYST_BRICKS = registerBlock("chiseled_amethyst_bricks",
             ()-> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK)));
 
-    public static final RegistryObject<Block> AMETHYST_PILLAR = registerBlock("amethyst_pillar",
+    public static final DeferredHolder<Block, Block> AMETHYST_PILLAR = registerBlock("amethyst_pillar",
             ()-> new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> AMETHYST_MOSAIC = registerBlock("amethyst_mosaic",
+    public static final DeferredHolder<Block, Block> AMETHYST_MOSAIC = registerBlock("amethyst_mosaic",
             ()-> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> AMETHYST_BALL = registerBlock("amethyst_ball",
+    public static final DeferredHolder<Block, Block> AMETHYST_BALL = registerBlock("amethyst_ball",
             ()-> new AmethystBallBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK).noOcclusion().pushReaction(PushReaction.DESTROY).lightLevel((p_50870_) -> {
                 return 10;
             })));
 
 
-    public static final RegistryObject<Block> AMETHYST_SPIKE = registerBlock("amethyst_spike",
+    public static final DeferredHolder<Block, Block> AMETHYST_SPIKE = registerBlock("amethyst_spike",
             ()-> new AmethystSpikeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK).forceSolidOn().noOcclusion().randomTicks().strength(1.0F, 3.0F).dynamicShape().offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY).lightLevel((p_50870_) -> {
                 return 5;
             })));
 
 
-    public static final RegistryObject<Block> AMETHYST_STAIRS = registerBlock("amethyst_stairs",
+    public static final DeferredHolder<Block, Block> AMETHYST_STAIRS = registerBlock("amethyst_stairs",
             ()-> new StairBlock(Blocks.AMETHYST_BLOCK.defaultBlockState(),BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK)));
-    public static final RegistryObject<Block> AMETHYST_SLAB = registerBlock("amethyst_slab",
+    public static final DeferredHolder<Block, Block> AMETHYST_SLAB = registerBlock("amethyst_slab",
             ()-> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK)));
-    public static final RegistryObject<Block> AMETHYST_WALL = registerBlock("amethyst_wall",
+    public static final DeferredHolder<Block, Block> AMETHYST_WALL = registerBlock("amethyst_wall",
             ()-> new WallBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK)));
 
 
-    private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block){
-       RegistryObject<T> toReturn = BLOCKS.register(name,block);
+    private static <T extends Block> DeferredHolder<Block, T> registerBlock(String name, Supplier<T> block){
+       DeferredHolder<Block, T> toReturn = BLOCKS.register(name,block);
        registerBlockitem(name,toReturn);
        return toReturn;
    }
-    private static <T extends Block> RegistryObject<Item> registerBlockitem(String name,RegistryObject<T>block){
+    private static <T extends Block> DeferredHolder<Item, Item> registerBlockitem(String name,DeferredHolder<Block, T>block){
         return ModItems.ITEMS.register(name,()->new BlockItem(block.get(),new Item.Properties()));
     }
 

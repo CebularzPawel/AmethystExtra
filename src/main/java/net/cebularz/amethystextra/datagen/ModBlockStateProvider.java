@@ -6,12 +6,12 @@ import net.cebularz.amethystextra.block.ModBlocks;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.*;
-import net.minecraftforge.client.model.generators.BlockModelBuilder;
-import net.minecraftforge.client.model.generators.BlockStateProvider;
-import net.minecraftforge.client.model.generators.ModelFile;
-import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.neoforge.client.model.generators.BlockModelBuilder;
+import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
+import net.neoforged.neoforge.client.model.generators.ModelFile;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.neoforged.neoforge.registries.DeferredHolder;
 
 public class ModBlockStateProvider extends BlockStateProvider {
     public ModBlockStateProvider(PackOutput output, ExistingFileHelper exFileHelper) {
@@ -48,22 +48,22 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.AMETHYST_SPIRAL);
     }
 
-    private void blockWithItem(RegistryObject<Block> blockRegistryObject) {
+    private void blockWithItem(DeferredHolder<Block, Block> blockRegistryObject) {
         simpleBlockWithItem(blockRegistryObject.get(), cubeAll(blockRegistryObject.get()));
 
     }
-    private void Top_Bottom_Side_Block(RegistryObject<Block> blockRegistryObject, String sideTexture, String bottomTexture, String topTexture) {
+    private void Top_Bottom_Side_Block(DeferredHolder<Block, Block> blockRegistryObject, String sideTexture, String bottomTexture, String topTexture) {
         ResourceLocation side = modLoc(sideTexture);
         ResourceLocation bottom = modLoc(bottomTexture);
         ResourceLocation top = modLoc(topTexture);
         simpleBlockWithItem(blockRegistryObject.get(), models().cubeBottomTop(blockRegistryObject.getId().getPath(), side, bottom, top));
 
     }
-    private void blockItem(RegistryObject<Block> blockRegistryObject) {
+    private void blockItem(DeferredHolder<Block, Block> blockRegistryObject) {
         simpleBlockItem(blockRegistryObject.get(), new ModelFile.UncheckedModelFile(AmethystExtra.MOD_ID +
-                ":block/" + ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath()));
+                ":block/" + BuiltInRegistries.BLOCK.getKey(blockRegistryObject.get()).getPath()));
     }
-    private void Pillar_Block(RegistryObject<Block> blockRegistryObject, String sideTexture, String endTexture) {
+    private void Pillar_Block(DeferredHolder<Block, Block> blockRegistryObject, String sideTexture, String endTexture) {
         ResourceLocation side = modLoc(sideTexture);
         ResourceLocation end = modLoc(endTexture);
         simpleBlockWithItem(blockRegistryObject.get(), models().cubeColumnHorizontal(blockRegistryObject.getId().getPath(),side,end));
