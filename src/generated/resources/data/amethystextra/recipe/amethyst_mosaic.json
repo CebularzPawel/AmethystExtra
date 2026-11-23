@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "M": {
+      "item": "amethystextra:amethyst_bricks"
+    },
+    "m": {
+      "item": "amethystextra:amethyst_bricks_slab"
+    }
+  },
+  "pattern": [
+    "MmM",
+    "mMm",
+    "MmM"
+  ],
+  "result": {
+    "count": 7,
+    "id": "amethystextra:amethyst_mosaic"
+  }
+}

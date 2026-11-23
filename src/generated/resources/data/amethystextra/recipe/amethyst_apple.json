@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "minecraft:amethyst_shard"
+    },
+    "a": {
+      "item": "minecraft:apple"
+    }
+  },
+  "pattern": [
+    "AAA",
+    "AaA",
+    "AAA"
+  ],
+  "result": {
+    "count": 1,
+    "id": "amethystextra:amethyst_apple"
+  }
+}

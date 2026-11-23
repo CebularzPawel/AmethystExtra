@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "minecraft:amethyst_block"
+    },
+    "a": {
+      "item": "minecraft:amethyst_shard"
+    },
+    "d": {
+      "item": "minecraft:diamond"
+    }
+  },
+  "pattern": [
+    "aAa",
+    "AdA",
+    "aAa"
+  ],
+  "result": {
+    "count": 1,
+    "id": "amethystextra:amethyst_ball"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "M": {
+      "item": "minecraft:amethyst_block"
+    }
+  },
+  "pattern": [
+    "   ",
+    "MMM",
+    "MMM"
+  ],
+  "result": {
+    "count": 6,
+    "id": "amethystextra:amethyst_wall"
+  }
+}
